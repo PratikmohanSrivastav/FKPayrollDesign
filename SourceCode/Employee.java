@@ -1,4 +1,27 @@
-import java.time.LocalDate;
+// This is the main class////
+
+/// Employee object Class//
+
+/// Each employee has address,name,id ///
+
+/// I have also Included a library which will be used for the date requirements that I will have in my code///
+
+/// Initially I had handled this with the help of java.time.LocalDate ///
+
+/// But its functionality was a little difficult to handle /////
+
+/// Hence this library has been included  , I found this through an online source ///
+
+/// Please unzip the file that I have included in my Library Folder ///
+
+// *********************************////
+
+
+//*******************************/////
+
+
+
+import org.joda.time.DateTime;
 
 
 public class Employee {
@@ -17,11 +40,11 @@ public class Employee {
         this.emp_address = emp_address;
     }
 
-    public LocalDate isPayPeriodStartDate(LocalDate payDate) {
+    public DateTime isPayPeriodStartDate(DateTime payDate) {
       return stype.isPayPeriodStartDate(payDate);
     }
 
-    public boolean isPayDate(LocalDate payDate) {
+    public boolean isPayDate(DateTime payDate) {
       return stype.isPayDate(payDate);
     }
     public void payDay(Paycheck paycheck) {

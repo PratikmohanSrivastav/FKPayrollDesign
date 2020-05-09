@@ -1,10 +1,10 @@
-import java.time.LocalDate;
+import org.joda.time.DateTime;
 
 public interface PaySchedule {
 
-  boolean isPayDate(LocalDate payDate);
+  boolean isPayDate(DateTime payDate);
 
-  java.time.LocalDate isPayPeriodStartDate(LocalDate payDate);
+  DateTime isPayPeriodStartDate(DateTime payDate);
 
 }
 
