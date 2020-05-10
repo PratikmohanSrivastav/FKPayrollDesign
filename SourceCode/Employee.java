@@ -28,16 +28,19 @@ public class Employee {
     public String emp_address;
     public String emp_name;
     public int emp_id;
-    public Union union; 
+    public String pay_method;
+    public boolean union; 
     public PayClassification ctype;
     public PaySchedule stype;
-    public PayMethod mtype;
+    
 
 
-    public Employee(int emp_id, String emp_name, String emp_address) {
+    public Employee(int emp_id, String emp_name, String emp_address,String pay_method,boolean union) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
         this.emp_address = emp_address;
+        this.pay_method = pay_method;
+        this.union = union;
     }
 
     public DateTime isPayPeriodStartDate(DateTime payDate) {
@@ -49,12 +52,14 @@ public class Employee {
     }
     public void payDay(Paycheck paycheck) {
       double grossPay = ctype.calculatePay(paycheck);
-      double deductions = union.calculateDeductions(paycheck);
+
+
+      double deductions = 0;
       double netPay = grossPay - deductions;
+
       paycheck.grossPay = grossPay;
       paycheck.deductions = deductions;
       paycheck.netPay = netPay;
-      mtype.pay(paycheck);
     }
     
 }
