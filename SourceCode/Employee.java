@@ -29,18 +29,20 @@ public class Employee {
     public String emp_name;
     public int emp_id;
     public String pay_method;
+    public double commission_rate;
     public boolean union; 
     public PayClassification ctype;
     public PaySchedule stype;
     
 
 
-    public Employee(int emp_id, String emp_name, String emp_address,String pay_method,boolean union) {
+    public Employee(int emp_id, String emp_name, String emp_address,String pay_method,boolean union,double commission_rate) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
         this.emp_address = emp_address;
         this.pay_method = pay_method;
         this.union = union;
+        this.commission_rate = commission_rate;
     }
 
     public DateTime isPayPeriodStartDate(DateTime payDate) {
